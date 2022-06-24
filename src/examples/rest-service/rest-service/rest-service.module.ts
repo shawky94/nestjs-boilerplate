@@ -4,6 +4,6 @@ import { RestServiceController } from './rest-service.controller';
 
 @Module({
   controllers: [RestServiceController],
-  providers: [RestServiceService]
+  providers: [RestServiceService],
 })
 export class RestServiceModule {}

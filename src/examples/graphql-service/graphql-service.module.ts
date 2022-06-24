@@ -3,6 +3,6 @@ import { GraphqlServiceService } from './graphql-service.service';
 import { GraphqlServiceResolver } from './graphql-service.resolver';
 
 @Module({
-  providers: [GraphqlServiceResolver, GraphqlServiceService]
+  providers: [GraphqlServiceResolver, GraphqlServiceService],
 })
 export class GraphqlServiceModule {}

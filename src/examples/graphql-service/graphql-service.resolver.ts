@@ -9,7 +9,10 @@ export class GraphqlServiceResolver {
   constructor(private readonly graphqlServiceService: GraphqlServiceService) {}
 
   @Mutation(() => GraphqlService)
-  createGraphqlService(@Args('createGraphqlServiceInput') createGraphqlServiceInput: CreateGraphqlServiceInput) {
+  createGraphqlService(
+    @Args('createGraphqlServiceInput')
+    createGraphqlServiceInput: CreateGraphqlServiceInput,
+  ) {
     return this.graphqlServiceService.create(createGraphqlServiceInput);
   }
 
@@ -24,8 +27,14 @@ export class GraphqlServiceResolver {
   }
 
   @Mutation(() => GraphqlService)
-  updateGraphqlService(@Args('updateGraphqlServiceInput') updateGraphqlServiceInput: UpdateGraphqlServiceInput) {
-    return this.graphqlServiceService.update(updateGraphqlServiceInput.id, updateGraphqlServiceInput);
+  updateGraphqlService(
+    @Args('updateGraphqlServiceInput')
+    updateGraphqlServiceInput: UpdateGraphqlServiceInput,
+  ) {
+    return this.graphqlServiceService.update(
+      updateGraphqlServiceInput.id,
+      updateGraphqlServiceInput,
+    );
   }
 
   @Mutation(() => GraphqlService)
