@@ -12,19 +12,6 @@ services:
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
       POSTGRES_DB: ${DATABASE_NAME}
 
-  maildev:
-    build:
-      context: .
-      dockerfile: Dockerfile.maildev
-    ports:
-      - ${MAIL_CLIENT_PORT}:1080
-      - ${MAIL_PORT}:1025
-
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
 
   redis:
     image: redis:7-alpine
